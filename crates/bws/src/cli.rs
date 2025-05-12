@@ -112,6 +112,21 @@ pub(crate) enum Commands {
         )]
         uuids_as_keynames: bool,
     },
+    #[command(long_about = "Run a command with secrets injected")]
+    Serve {
+        #[arg(
+            long,
+            help = "The hostname to bind your API server to",
+            default_value = "localhost"
+        )]
+        hostname: String,
+        #[arg(
+            long,
+            help = "The port to run your API webserver on",
+            default_value = "8086"
+        )]
+        port: u32,
+    },
 }
 
 #[derive(Subcommand, Debug)]

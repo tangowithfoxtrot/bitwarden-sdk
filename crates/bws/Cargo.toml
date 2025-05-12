@@ -15,6 +15,7 @@ repository.workspace = true
 license-file.workspace = true
 
 [dependencies]
+axum = "0.8.4"
 bat = { version = "0.25.0", features = ["regex-fancy"], default-features = false }
 bitwarden = { workspace = true, features = ["secrets"] }
 bitwarden-cli = { workspace = true }

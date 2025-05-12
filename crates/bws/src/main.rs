@@ -153,6 +153,11 @@ async fn process_commands() -> Result<()> {
             std::process::exit(exit_code);
         }
 
+        Commands::Serve { hostname, port } => {
+            let _ = command::serve::serve(&hostname, port, client, organization_id).await;
+            Ok(())
+        }
+
         Commands::Config { .. } | Commands::Completions { .. } => {
             unreachable!()
         }
